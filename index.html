@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哈尔滨图论与组合研讨会 | Harbin Seminar on Graph Theory and Combinatorics</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #4A90E2;
+            --text-color: #333333;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Noto Sans CJK SC', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid white;
+            color: white;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .lang-switch:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        h1 { margin: 0; font-size: 2.2rem; }
+        h2 { font-size: 1.5rem; margin-top: 0; }
+        h3 { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 8px; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1xl));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .info-item strong { color: var(--primary-color); }
+
+        /* 参会人员表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th { background-color: #f1f5f9; color: var(--primary-color); }
+        tr:nth-child(even) { background-color: #f8fafc; }
+
+        /* 回执区域样式 */
+        .receipt-box {
+            background: #fffbeb;
+            border: 2px dashed #f59e0b;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .receipt-table {
+            width: 100%;
+            background: white;
+        }
+
+        .receipt-table td { padding: 12px; }
+
+        /* 语言显示控制 */
+        [lang="en"] { display: none; }
+        .en h1, .en h2, .en h3, .en p, .en li, .en span, .en th, .en td { font-family: Arial, sans-serif; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <button class="lang-switch" onclick="toggleLanguage()">English</button>
+        <div class="lang-zh">
+            <h1>哈尔滨图论与组合研讨会</h1>
+            <p style="margin-top: 15px; font-size: 1.1rem;">会议通知</p>
+        </div>
+        <div class="lang-en" lang="en">
+            <h1>Harbin Seminar on Graph Theory and Combinatorics</h1>
+            <p style="margin-top: 15px; font-size: 1.1rem;">Conference Notice</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="card">
+            <div class="lang-zh">
+                <h2>尊敬的各位专家同仁：</h2>
+                <p>您好！由中国运筹学会图论组合分会和哈尔滨工程大学联合主办的“哈尔滨图论与组合研讨会”将于2026年7月3—5日在黑龙江省哈尔滨市举行。我们诚挚邀请您参加本次研讨会。</p>
+                <p>本次研讨会旨在交流图论、组合及其相关应用领域的国际前沿热点和最新研究成果，推动各研究方向的交叉融合与发展，为同行提供一个学术交流的平台。</p>
+            </div>
+            <div class="lang-en" lang="en">
+                <h2>Dear Experts and Colleagues,</h2>
+                <p>Greetings! Jointly organized by the Graph Theory and Combinatorics Branch of the Operations Research Society of China and Harbin Engineering University, the "Harbin Seminar on Graph Theory and Combinatorics" will be held from July 3 to 5, 2026, in Harbin, Heilongjiang Province. We sincerely invite you to attend this seminar.</p>
+                <p>This seminar aims to exchange international cutting-edge topics and the latest research achievements in graph theory, combinatorics, and their related application fields, promote the cross-integration and development of various research directions, and provide an academic exchange platform for peers.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="lang-zh">具体事项</h3>
+            <h3 class="lang-en" lang="en">Details</h3>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="lang-zh"><strong>会议报到：</strong>2026年7月3日</span>
+                    <span class="lang-en" lang="en"><strong>Registration Date:</strong> July 3, 2026</span>
+                </div>
+                <div class="info-item">
+                    <span class="lang-zh"><strong>会议时间：</strong>2026年7月4日—5日</span>
+                    <span class="lang-en" lang="en"><strong>Conference Dates:</strong> July 4–5, 2026</span>
+                </div>
+                <div class="info-item">
+                    <span class="lang-zh"><strong>会议地点：</strong>哈尔滨友谊宫酒店<br><small>（哈尔滨市道里区友谊路263号）</small></span>
+                    <span class="lang-en" lang="en"><strong>Venue:</strong> Harbin Friendship Palace Hotel<br><small>(No. 263 Youyi Road, Daoli District, Harbin)</small></span>
+                </div>
+                <div class="info-item">
+                    <span class="lang-zh"><strong>会议费用：</strong>不收取会务费，食宿统一安排，费用自理</span>
+                    <span class="lang-en" lang="en"><strong>Fees:</strong> No registration fee. Accommodation and meals are arranged uniformly at participants' own expense.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="lang-zh">参会人员名单</h3>
+            <h3 class="lang-en" lang="en">List of Participants</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="lang-zh">姓名</th>
+                        <th class="lang-en" lang="en">Name</th>
+                        <th class="lang-zh">工作单位</th>
+                        <th class="lang-en" lang="en">Institution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>艾江东 / Ai, Jiangdong</td><td>Nankai University (南开大学)</td></tr>
+                    <tr><td>宝音都仍 / Bao, Yindoureng</td><td>Xinjiang University (新疆大学)</td></tr>
+                    <tr><td>白延东 / Bai, Yandong</td><td>Northwestern Polytechnical University (西北工业大学)</td></tr>
+                    <tr><td>常安 / Chang, An</td><td>Fuzhou University (福州大学)</td></tr>
+                    <tr><td>陈明zhu / Chen, Mingzhu</td><td>Hainan University (海南大学)</td></tr>
+                    <tr><td>陈海燕 / Chen, Haiyan</td><td>Jimei University (集美大学)</td></tr>
+                    <tr><td>邓波 / Deng, Bo</td><td>Qinghai Normal University (青海师范大学)</td></tr>
+                    <tr><td>范益政 / Fan, Yizheng</td><td>Anhui University (安徽大学)</td></tr>
+                    <tr><td>冯立华 / Feng, Lihua</td><td>Central South University (中南大学)</td></tr>
+                    <tr><td>耿显亚 / Geng, Xianya</td><td>Anhui University of Science and Technology (安徽理工大学)</td></tr>
+                    <tr><td>郭继明 / Guo, Jiming</td><td>East China University of Science and Technology (华东理工大学)</td></tr>
+                    <tr><td>韩杰 / Han, Jie</td><td>Beijing Institute of Technology (北京理工大学)</td></tr>
+                    <tr><td>侯建锋 / Hou, Jianfeng</td><td>Fuzhou University (福州大学)</td></tr>
+                    <tr><td>侯新民 / Hou, Xinmin</td><td>University of Science and Technology of China (中国科学技术大学)</td></tr>
+                    <tr><td>黄雪毅 / Huang, Xueyi</td><td>East China University of Science and Technology (华东理工大学)</td></tr>
+                    <tr><td>金贤安 / Jin, Xian'an</td><td>Xiamen University (厦门大学)</td></tr>
+                    <tr><td>康丽英 / Kang, Liying</td><td>Shanghai University (上海大学)</td></tr>
+                    <tr><td>李丹 / Li, Dan</td><td>Xinjiang University (新疆大学)</td></tr>
+                    <tr><td>李红海 / Li, Honghai</td><td>Jiangxi Normal University (江西师范大学)</td></tr>
+                    <tr><td>李佳傲 / Li, Jiaao</td><td>Nankai University (南开大学)</td></tr>
+                    <tr><td>李书超 / Li, Shuchao</td><td>Central China Normal University (华中师范大学)</td></tr>
+                    <tr><td>李雨生 / Li, Yusheng</td><td>Tongji University (同济大学)</td></tr>
+                    <tr><td>林辉球 / Lin, Huiqiu</td><td>East China University of Science and Technology (华东理工大学)</td></tr>
+                    <tr><td>林震 / Lin, Zhen</td><td>Qinghai Normal University (青海师范大学)</td></tr>
+                    <tr><td>刘阿明 / Liu, Aming</td><td>Hainan University (海南大学)</td></tr>
+                    <tr><td>刘乐乐 / Liu, Lele</td><td>Anhui University (安徽大学)</td></tr>
+                    <tr><td>刘猛 / Liu, Meng</td><td>Anhui University (安徽大学)</td></tr>
+                    <tr><td>刘瑞芳 / Liu, Ruifang</td><td>Zhengzhou University (郑州大学)</td></tr>
+                    <tr><td>刘晓刚 / Liu, Xiaogang</td><td>Northwestern Polytechnical University (西北工业大学)</td></tr>
+                    <tr><td>鲁红亮 / Lu, Hongliang</td><td>Xi'an Jiaotong University (西安交通大学)</td></tr>
+                    <tr><td>毛亚平 / Mao, Yaping</td><td>Qinghai Normal University (青海师范大学)</td></tr>
+                    <tr><td>苗正科 / Miao, Zhengke</td><td>Jiangsu Normal University (江苏师范大学)</td></tr>
+                    <tr><td>宁博 / Ning, Bo</td><td>Nankai University (南开大学)</td></tr>
+                    <tr><td>彭星 / Peng, Xing</td><td>Anhui University (安徽大学)</td></tr>
+                    <tr><td>彭岳建 / Peng, Yuejian</td><td>Hunan University (湖南大学)</td></tr>
+                    <tr><td>史永堂 / Shi, Yongtang</td><td>Nankai University (南开大学)</td></tr>
+                    <tr><td>束金龙 / Shu, Jinlong</td><td>East China Normal University (华东师范大学)</td></tr>
+                    <tr><td>王光辉 / Wang, Guanghui</td><td>Shandong University (山东大学)</td></tr>
+                    <tr><td>王建光 / Wang, Jianguang</td><td>Shandong University of Technology (山东理工大学)</td></tr>
+                    <tr><td>王卫 / Wang, Wei</td><td>Xi'an Jiaotong University (西安交通大学)</td></tr>
+                    <tr><td>王毅 / Wang, Yi</td><td>Anhui University (安徽大学)</td></tr>
+                    <tr><td>王艺桥 / Wang, Yiqiao</td><td>Beijing University of Technology (北京工业大学)</td></tr>
+                    <tr><td>王维凡 / Wang, Weifan</td><td>Zhejiang Normal University (浙江师范大学)</td></tr>
+                    <tr><td>吴河辉 / Wu, Hehui</td><td>Fudan University (复旦大学)</td></tr>
+                    <tr><td>许宝刚 / Xu, Baogang</td><td>Nanjing Normal University (南京师范大学)</td></tr>
+                    <tr><td>尤利华 / You, Lihua</td><td>South China Normal University (华南师范大学)</td></tr>
+                    <tr><td>袁龙图 / Yuan, Longtu</td><td>East China Normal University (华东师范大学)</td></tr>
+                    <tr><td>翟明清 / Zhai, Mingqing</td><td>Nanjing University of Science and Technology (南京理工大学)</td></tr>
+                    <tr><td>张明祖 / Zhang, Mingzu</td><td>Xinjiang University (新疆大学)</td></tr>
+                    <tr><td>张晓东 / Zhang, Xiaodong</td><td>Shanghai Jiao Tong University (上海交通大学)</td></tr>
+                    <tr><td>张晓岩 / Zhang, Xiaoyan</td><td>Nanjing Normal University (南京师范大学)</td></tr>
+                    <tr><td>周波 / Zhou, Bo</td><td>South China Normal University (华南师范大学)</td></tr>
+                    <tr><td>周进鑫 / Zhou, Jinxin</td><td>Beijing Jiaotong University (北京交通大学)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3 class="lang-zh">会议联系人与回执提交</h3>
+            <h3 class="lang-en" lang="en">Contacts & Registration Receipt</h3>
+            <p class="lang-zh" style="color: #ef4444; font-weight: bold;">请各位老师在6月1日前将会议回执复制填好后发送到邮箱：zhoujiang@hrbeu.edu.cn</p>
+            <p class="lang-en" lang="en" style="color: #ef4444; font-weight: bold;">Please send the completed registration receipt to zhoujiang@hrbeu.edu.cn before June 1.</p>
+            
+            <ul>
+                <li>周 江 (<a href="mailto:zhoujiang@hrbeu.edu.cn">zhoujiang@hrbeu.edu.cn</a>, 18245159920)</li>
+                <li>孙丽珠 (<a href="mailto:lizhusun@hrbeu.edu.cn">lizhusun@hrbeu.edu.cn</a>, 15945993589)</li>
+                <li>王 烨 (<a href="mailto:ywang@hrbeu.edu.cn">ywang@hrbeu.edu.cn</a>, 13501730607)</li>
+                <li>陈利祥 (<a href="mailto:chenlixiang@hrbeu.edu.cn">chenlixiang@hrbeu.edu.cn</a>, 18045175821)</li>
+                <li>卜长江 (<a href="mailto:buchangjiang@hrbeu.edu.cn">buchangjiang@hrbeu.edu.cn</a>, 15904612166)</li>
+            </ul>
+
+            <div class="receipt-box">
+                <h4 class="lang-zh" style="margin-top:0;">📄 附件：会议回执单文本（可直接复制填写发送）</h4>
+                <h4 class="lang-en" lang="en" style="margin-top:0;">📄 Attachment: Registration Receipt Form (Copy and Paste to Email)</h4>
+                
+                <table class="receipt-table">
+                    <tr>
+                        <td width="20%"><strong>姓名 / Name</strong></td><td width="30%"></td>
+                        <td width="20%"><strong>性别 / Gender</strong></td><td width="30%"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>职称职务 / Title</strong></td><td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>工作单位 / Institution</strong></td><td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>E-mail</strong></td><td></td>
+                        <td><strong>电话 / Phone</strong></td><td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>住宿需求 / Accommodation</strong></td>
+                        <td colspan="3">家属 / Accompanying Person: ___ 人(Persons)，标准间 / Twin Room: ___ 间，大床房 / King Room: ___ 间</td>
+                    </tr>
+                    <tr>
+                        <td><strong>是否作报告 / Presentation</strong></td>
+                        <td colspan="3">是 (Yes) [  ] &nbsp;&nbsp;&nbsp;&nbsp; 否 (No) [  ]</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><strong>往返信息 / Travel Info</strong></td>
+                        <td colspan="3">到达日期与时间 / Arrival Date & Time：____________ 车次/航班 (Train/Flight)：____________</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">返程日期与时间 / Return Date & Time：____________ 车次/航班 (Train/Flight)：____________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>报告题目及摘要 / Title & Abstract</strong></td>
+                        <td colspan="3"><small style="color:gray;">(可复制LaTeX源代码 / LaTeX code supported)</small><br><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>报告人简介 / Biography</strong></td>
+                        <td colspan="3"><br><br></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleLanguage() {
+            const btn = document.querySelector('.lang-switch');
+            const isZh = btn.innerText === 'English';
+            
+            // 切换按钮文字
+            btn.innerText = isZh ? '中文' : 'English';
+            
+            // 切换显示隐藏
+            const zhElements = document.querySelectorAll('.lang-zh, [class^="lang-zh"]');
+            const enElements = document.querySelectorAll('[lang="en"]');
+            
+            zhElements.forEach(el => el.style.display = isZh ? 'none' : 'block');
+            enElements.forEach(el => {
+                if(el.tagName === 'TH' || el.tagName === 'TD' || el.tagName === 'SPAN') {
+                    el.style.display = isZh ? 'inline-block' : 'none';
+                } else {
+                    el.style.display = isZh ? 'block' : 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
